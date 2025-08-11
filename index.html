@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BrandMonkey – Marketing Readiness Assessment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" aria-describedby="subtitle">
+      <div class="logo">BrandMonkey</div>
+      <div id="subtitle" class="subtitle">Marketing Readiness Assessment</div>
+
+      <div class="progress-wrap" aria-live="polite">
+        <div class="progress-rail"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="progress-text" id="progressText">0% Complete</div>
+      </div>
+    </header>
+
+    <main class="form-card">
+      <form id="assessmentForm" novalidate>
+        <div id="sections"><!-- JS renders the sections/questions here --></div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary" disabled>Complete Assessment</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Results Modal -->
+  <div class="modal" id="resultsModal" aria-hidden="true" role="dialog" aria-labelledby="planTitle" aria-describedby="planDesc">
+    <div class="modal-card" id="modalCard">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title" id="planTitle">Your Marketing Plan</div>
+          <div class="modal-sub" id="planSubtitle">Customized for your business</div>
+        </div>
+        <div class="score-badge" id="scoreBadge">0 / 200</div>
+      </div>
+      <div class="modal-body">
+        <p class="plan-copy" id="planDesc">Complete the assessment to see your personalized marketing plan.</p>
+        <ul class="features" id="planFeatures"></ul>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="closeModal">Close</button>
+        <button class="btn btn-primary" id="restartBtn">Take Assessment Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
